@@ -1,4 +1,9 @@
 name: deploy-container
+
+defaults:
+  run:
+    working-directory: packages/container
+
 on:
   push:
     branches:
@@ -6,16 +11,11 @@ on:
     paths:
       - "packages/container/**"
 
-defaults:
-  run:
-    working-directory: package/container
-
 jobs:
   build:
-    runs-on: unbunt-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: nvm use 14
-      - run: npm run build
       - run: npm run build
       - run: ls
