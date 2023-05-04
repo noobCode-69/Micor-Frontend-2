@@ -16,12 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2 # use v2 instead of v3 as v2 is the latest stable version as of my knowledge cutoff date
+      - uses: actions/setup-node@v2
         with:
           node-version: 14
       - run: npm install
       - run: npm run build
-      - uses: cyberonin/awscli-action@master
+      - uses: cyberonin/awscli-action@v0.0.1
         with:
           args: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
         env:
