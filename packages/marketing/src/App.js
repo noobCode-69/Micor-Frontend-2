@@ -16,8 +16,8 @@ const App = ({ history }) => {
       <StylesProvider generateClassName={generateClassName}>
         <Router history={history}>
           <Switch>
-            <Route exact path={"/pricing"} component={Pricing} />
             <Route exact path={"/"} component={Landing} />
+            <Route exact path={"/pricing"} component={Pricing} />
           </Switch>
         </Router>
       </StylesProvider>

@@ -7,6 +7,8 @@ export default () => {
   const history = useHistory();
 
   useEffect(() => {
+
+
     const { onParentNavigate } = mount(ref.current, {
       onNavigate: ({ pathname: nextPathname }) => {
         const { pathname } = history;
@@ -14,6 +16,7 @@ export default () => {
           history.push(nextPathname);
         }
       },
+      initialPage: history.location.pathname,
     });
     history.listen(onParentNavigate);
   }, []);
