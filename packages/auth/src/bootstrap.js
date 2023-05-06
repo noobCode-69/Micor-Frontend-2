@@ -6,11 +6,11 @@ import { createMemoryHistory, createBrowserHistory } from "history";
 // Mount function to start up the app
 
 const mount = (el, { onNavigate, defaultHistory, initialPage }) => {
-  const history = defaultHistory || createMemoryHistory();
-
-  if (initialPage !== history.location.pathname) {
-    history.push(initialPage);
-  }
+  const history =
+    defaultHistory ||
+    createMemoryHistory({
+      initialEntries: [initialPage],
+    });
 
   if (onNavigate) {
     history.listen(onNavigate);
