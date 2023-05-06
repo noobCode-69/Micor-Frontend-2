@@ -4,7 +4,7 @@ import { Switch, Route, Router } from "react-router-dom";
 import { StylesProvider, createGenerateClassName } from "@material-ui/core";
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: "au",
+  productionPrefix: "auth",
 });
 
 import Signin from "./components/Signin";
