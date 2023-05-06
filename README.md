@@ -10,4 +10,4 @@ This is a repo, which uses the microfrontend architecture for building web apps,
   * Deploying mfe's in AWS (S3 , Cloudfront)
 ## Issues
 - Little bug in Header (maybe caching issue)
-- Learned 
+ 
